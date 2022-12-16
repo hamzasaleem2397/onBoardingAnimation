@@ -1,6 +1,6 @@
 {
   "name": "@hamzasaleem2397/react-native-onboarding",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "React native credit card input component",
   "main": "index.js",
   "scripts": {
@@ -20,9 +20,7 @@
     "url": "https://github.com/hamzasaleem2397/react-native-credit-card-input/issues"
   },
   "homepage": "https://github.com/hamzasaleem2397/react-native-credit-card-input#readme",
-  "dependencies": {
-    "react-native-svg": "^13.6.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@babel/core": "^7.12.9",
     "@babel/runtime": "^7.12.5",
