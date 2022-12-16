@@ -38,12 +38,13 @@ export default Pagination;
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
-    width: 64,
+    width: 90,
   },
   dot: {
-    height: 20,
-    marginHorizontal: 8,
+    height: 10,
+    marginHorizontal: 3,
     width: 20,
     backgroundColor: 'blue',
+    borderRadius: 100,
   },
 });
