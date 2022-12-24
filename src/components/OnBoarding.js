@@ -12,7 +12,12 @@ import OnBoardingItem from './OnBoardingItem';
 import Pagination from './Pagination';
 import NextButton from './NextButton';
 
-const OnBoarding = () => {
+const OnBoarding = ({
+  paginationColor,
+  titleColor = 'purple',
+  descriptionColor = 'purple',
+  fontSize = 22,
+}) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const scrollX = useRef(new Animated.Value(0)).current;
   const viewableItemsChange = useRef(({viewableItems}) => {
