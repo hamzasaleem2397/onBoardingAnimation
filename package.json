@@ -1,6 +1,6 @@
 {
   "name": "@hamzasaleem2397/react-native-onboarding",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "description": "React native credit card input component",
   "main": "index.js",
   "scripts": {
