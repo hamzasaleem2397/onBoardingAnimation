@@ -7,7 +7,7 @@ import {
 } from 'react-native';
 import React from 'react';
 
-const Pagination = ({data, scrollX}) => {
+const Pagination = ({data, scrollX, paginationColor}) => {
   const {width} = useWindowDimensions();
   return (
     <View style={styles.container}>
@@ -26,7 +26,10 @@ const Pagination = ({data, scrollX}) => {
         return (
           <Animated.View
             key={i.toString()}
-            style={[styles.dot, {width: dotWidth, opacity}]}></Animated.View>
+            style={[
+              styles.dot(paginationColor),
+              {width: dotWidth, opacity},
+            ]}></Animated.View>
         );
       })}
     </View>
@@ -40,11 +43,11 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     width: 90,
   },
-  dot: {
+  dot: paginationColor => ({
     height: 10,
     marginHorizontal: 3,
     width: 20,
-    backgroundColor: 'blue',
+    backgroundColor: paginationColor,
     borderRadius: 100,
-  },
+  }),
 });

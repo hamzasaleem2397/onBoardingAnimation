@@ -8,8 +8,14 @@ import {
 } from 'react-native';
 import React, {useEffect, useRef} from 'react';
 import Svg, {G, Circle} from 'react-native-svg';
-const NextButton = ({percentage, scrollTo}) => {
-  console.log(percentage);
+const NextButton = ({
+  percentage,
+  scrollTo,
+  buttonColor,
+  circleOutline,
+  circleFilledOutline,
+  nextIconColor,
+}) => {
   const size = 128;
   const strokeWidth = 2;
   const center = size / 2;
@@ -52,7 +58,7 @@ const NextButton = ({percentage, scrollTo}) => {
       <Svg width={size} height={size}>
         <G rotation={'-90'} origin={center}>
           <Circle
-            stroke={'pink'}
+            stroke={circleOutline}
             cx={center}
             cy={center}
             r={radius}
@@ -60,7 +66,7 @@ const NextButton = ({percentage, scrollTo}) => {
           />
           <Circle
             ref={progressRef}
-            stroke="black"
+            stroke={circleFilledOutline}
             cx={center}
             cy={center}
             r={radius}
@@ -71,14 +77,13 @@ const NextButton = ({percentage, scrollTo}) => {
       </Svg>
       <TouchableOpacity
         onPress={scrollTo}
-        style={styles.button}
+        style={styles.button(buttonColor)}
         activeOpacity={0.6}>
         <Image
+          tintColor={nextIconColor}
           style={{height: 40, width: 40}}
           resizeMode="cover"
-          source={{
-            uri: 'https://elearningindustry.com/wp-content/uploads/2015/06/next-button-in-elearning-8-tips-1.jpg',
-          }}
+          source={require('../assests/forward.png')}
         />
       </TouchableOpacity>
     </View>
@@ -94,11 +99,11 @@ const styles = StyleSheet.create({
     alignContent: 'center',
     // backgroundColor: 'pink',
   },
-  button: {
+  button: buttonColor => ({
     position: 'absolute',
-    backgroundColor: '#f4338f',
+    backgroundColor: buttonColor,
     borderRadius: 100,
     padding: 20,
     alignSelf: 'center',
-  },
+  }),
 });
