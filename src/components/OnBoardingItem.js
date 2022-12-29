@@ -5,9 +5,10 @@ const OnBoardingItem = ({
   image,
   title,
   description,
-  titleColor = 'purple',
-  descriptionColor = 'purple',
-  fontSize = 22,
+  titleColor,
+  descriptionColor,
+  fontSizeTitle,
+  fontSizeDescription,
 }) => {
   const {width, height} = useWindowDimensions();
 
@@ -17,12 +18,17 @@ const OnBoardingItem = ({
         source={image}
         style={[
           styles.image,
-          {resizeMode: 'center', width, height: height * 0.66},
+          {resizeMode: 'center', width, height: height * 0.6},
         ]}
       />
-      <View style={{flex: 0.3}}>
-        <Text style={styles.title(titleColor, fontSize)}>{title}</Text>
-        <Text style={styles.description(descriptionColor, fontSize)}>
+      <View style={{flex: 1, justifyContent: 'center'}}>
+        <Text style={styles.title(titleColor, fontSizeTitle)}>{title}</Text>
+        <Text
+          style={styles.description(
+            descriptionColor,
+            fontSizeDescription,
+            width,
+          )}>
           {description}
         </Text>
       </View>
@@ -34,10 +40,10 @@ export default OnBoardingItem;
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    // justifyContent: 'center',
+    // flex: 1,
+    // justifyContent: 'flex-end',
     alignItems: 'center',
-    // backgroundColor: 'black',
+    marginBottom: 10,
   },
   title: (color, fontSize) => ({
     fontFamily: 'arials',
@@ -45,11 +51,13 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize,
   }),
-  description: (color, fontSize) => ({
+  description: (color, fontSize, width) => ({
     fontFamily: 'arials',
     fontWeight: 'bold',
     color,
     fontSize,
+
+    width: width * 0.9,
   }),
   image: {
     justifyContent: 'center',
