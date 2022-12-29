@@ -41,7 +41,6 @@ export default Pagination;
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
-    width: 90,
   },
   dot: paginationColor => ({
     height: 10,

@@ -38,7 +38,7 @@ const OnBoarding = ({
     if (currentIndex < Data.length - 1) {
       sliderRef.current.scrollToIndex({index: currentIndex + 1});
     } else {
-      onEnd;
+      onEnd();
     }
   };
   useEffect(() => {

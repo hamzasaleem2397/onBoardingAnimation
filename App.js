@@ -7,7 +7,13 @@ const App = () => {
   return (
     <SafeAreaView style={styles.container}>
       {/* <OnBoarding paginationColor="blue" /> */}
-      <OnBoarding />
+      <OnBoarding
+        titleColor="white"
+        descriptionColor="white"
+        circleOutline="white"
+        paginationColor="white"
+        onEnd={() => console.log('asdas')}
+      />
     </SafeAreaView>
   );
 };

@@ -52,7 +52,7 @@ const NextButton = ({
       progressAnimation.removeAllListeners();
     };
   }, []);
-
+  console.log('object', progressRef);
   return (
     <View style={styles.container}>
       <Svg width={size} height={size}>
